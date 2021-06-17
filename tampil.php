@@ -20,8 +20,8 @@ include('config.php');
 		<center><font size="6">Data Mahasiswa</font></center>
 		<hr>
 		<a href="halaman_admin.php?page=tambah_mhs"><button class="btn btn-success">Tambah Data</button></a>
-		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search data">
-<!-- <script>
+		<!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search data">
+<script>
 function myFunction() {
   // Declare variables
   var input, filter, ul, li, a, i, txtValue;
