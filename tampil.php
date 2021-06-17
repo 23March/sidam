@@ -21,7 +21,7 @@ include('config.php');
 		<hr>
 		<a href="halaman_admin.php?page=tambah_mhs"><button class="btn btn-success">Tambah Data</button></a>
 		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search data">
-<script>
+<!-- <script>
 function myFunction() {
   // Declare variables
   var input, filter, ul, li, a, i, txtValue;
@@ -41,7 +41,7 @@ function myFunction() {
     }
   }
 }
-</script>
+</script> -->
 		<div class="table-responsive">
 		<table class="table table-striped jambo_table bulk_action" style= "weight:100%;overflow-x:auto">
 			<thead>
