@@ -178,8 +178,7 @@
 				<div  class="col-md-6 col-sm-6 offset-md-3">
 					<input type="submit" name="submit" class="btn btn-primary" value="Simpan">
 				<div  class="col-md-6 col-sm-6 offset-md-3">
-					<input type="back" name="back" class="btn btn-primary">
-				<a href="halaman_admin.php">
+					<input type="Back" name="Back" class="btn btn-primary" href="halaman_admin.php">
 			</div>
 		</form>
 	</div>
