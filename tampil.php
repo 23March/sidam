@@ -2,6 +2,18 @@
 //memasukkan file config.php
 include('config.php');
 ?>
+<style>
+#myInput {
+  background-image: url('/css/searchicon.png'); /* Add a search icon to input */
+  background-position: 10px 12px; /* Position the search icon */
+  background-repeat: no-repeat; /* Do not repeat the icon image */
+  width: 100%; /* Full-width */
+  font-size: 16px; /* Increase font-size */
+  padding: 12px 20px 12px 40px; /* Add some padding */
+  border: 1px solid #ddd; /* Add a grey border */
+  margin-bottom: 12px; /* Add some space below the input */
+}
+</style>
 
 
 	<div class="container" style="margin-top:20px">
@@ -9,8 +21,29 @@ include('config.php');
 		<hr>
 		<a href="halaman_admin.php?page=tambah_mhs"><button class="btn btn-success">Tambah Data</button></a>
 		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search data">
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById('myInput');
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName('li');
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    txtValue = a.textContent || a.innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
 		<div class="table-responsive">
-		<table class="table table-striped jambo_table bulk_action" style= "height: 5em;overflow-x:auto">
+		<table class="table table-striped jambo_table bulk_action" style= "weight:100%;overflow-x:auto">
 			<thead>
 			<center>	
 				<tr>
