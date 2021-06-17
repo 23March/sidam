@@ -95,11 +95,11 @@
                     <img src="assets/images/user.png" alt=""> <?php echo $_SESSION['username']; ?>
                   </a>
                   <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item"  href="#"> Profile</a>
+                    <!-- <a class="dropdown-item"  href="#"> Profile</a>
                       <a class="dropdown-item"  href="#">
                         <span class="badge bg-red pull-right">50%</span>
                         <span>Settings</span>
-                      </a>
+                      </a> -->
                     <a class="dropdown-item"  href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
                   </div>
                 </li>
