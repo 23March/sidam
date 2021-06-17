@@ -64,19 +64,13 @@
                       <li><a href="halaman_admin.php?page=tambah_mhs">Tambah Data</a></li>
                     </ul>
                   </li>
-                    <li><a><i class="fa fa-gear"></i> Settings <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="#">Settings 1</a></li>
-                      <li><a href="#">Settings 2</a></li>
-                    </ul>
-                  </li>
-                </ul>
+                  </ul>
               </div>
             </div>
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
+            <!-- <div class="sidebar-footer hidden-small">
               <a data-toggle="tooltip" data-placement="top" title="Settings" href="#">
                 <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
               </a>
@@ -89,7 +83,7 @@
               <a data-toggle="tooltip" data-placement="top" title="Logout" href="#">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
-            </div>
+            </div> -->
             <!-- /menu footer buttons -->
           </div>
         </div>
@@ -106,14 +100,14 @@
                   <a href="#" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
                     <img src="assets/images/user.png" alt="">Administrator
                   </a>
-                  <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                  <!-- <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item"  href="#"> Profile</a>
                       <a class="dropdown-item"  href="#">
                         <span class="badge bg-red pull-right">100%</span>
                         <span>Settings</span>
                       </a>
                     <a class="dropdown-item"  href="index.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a>
-                  </div>
+                  </div> -->
                 </li>
               </ul>
             </nav>
