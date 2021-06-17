@@ -27,7 +27,7 @@
 
 
 	<div class="container" style="margin-top:20px">
-		<center><font size="6">Data Mahasiswa</font></center>
+		<center><font size="6">Data Orang Tua</font></center>
 
 		<hr>
 <?php
@@ -36,7 +36,7 @@
 			//membuat variabel $id untuk menyimpan id dari GET id di URL
 			$Nim = $_GET['Nim'];
 
-			//query ke database SELECT tabel mahasiswa berdasarkan Nim
+			//query ke database SELECT tabel ortu berdasarkan Nim
 			$select = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE Nim='$Nim'") or die(mysqli_error($koneksi));
 
 			//jika hasil query = 0 maka muncul pesan error
@@ -53,39 +53,6 @@
 <center>
         <div class="card" style="width: 40rem;">
     <div class="card-body">
-        <h3 class="card-title">
-        <?php echo $data['Nama_Mhs'];?><br>
-        </h3>
-        <h6 class="card-subtitle mb-2 text-muted">
-            <?php echo $data['Nim'];?>  
-        </h6>
-        <p class="card-text">
-            Jenis Kelamin : <?php echo $data['Jenis_Kelamin'];?>
-        </p>
-        <p class="card-text">
-            Jurusan : <?php echo $data['Jurusan'];?>
-        </p>
-        <p class="card-text">
-            Program Studi  : <?php echo $data['Program_Studi'];?>
-        </p>
-        <p class="card-text">
-            Tanggal Lahir : <?php echo $data['Tanggal_Lahir'];?>
-        </p>
-        <p class="card-text">
-            Agama : <?php echo $data['Agama'];?> 
-        </p>
-        <p class="card-text">
-            Alamat : <?php echo $data['Alamat'];?>
-        </p>
-        <p class="card-text">
-            Nama Sekolah : <?php echo $data['Sekolah'];?>
-        </p>
-        <p class="card-text">
-            Alamat Sekolah  : <?php echo $data['Alamat_Sekolah'];?>
-        </p>
-        <p class="card-text">
-            Tahun Lulus : <?php echo $data['Tahun_Lulus'];?>
-        </p>
         <p class="card-text">
             Nama Ayah : <?php echo $data['Nama_Ayah'];?>
         </p>
@@ -109,7 +76,7 @@
   <br>
     <center>
     <div>
-    <a href="halaman_admin.php?page=tampil_mhs" class="btn btn-secondary">Kembali</a>
+    <a href="halaman_user.php?page=tampil_ortu" class="btn btn-secondary">Kembali</a>
     <br>
     <br>
     <p> Copyright © SIDAM | Sistem Informasi Akademik Mahasiswa 2021 </p>

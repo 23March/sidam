@@ -5,20 +5,32 @@
 		<?php
 		if(isset($_POST['submit'])){
 			$Nim			= $_POST['Nim'];
-			$Nama_Mhs			= $_POST['Nama_Mhs'];
+			$Nama_Mhs		= $_POST['Nama_Mhs'];
+			$Nik_Mhs		= $_POST['Nik_Mhs'];
 			$Jenis_Kelamin	= $_POST['Jenis_Kelamin'];
-			$Program_Studi		= $_POST['Program_Studi'];
+			$Program_Studi	= $_POST['Program_Studi'];
 			$Jurusan		= $_POST['Jurusan'];
-			$Tanggal_Lahir		= $_POST['Tanggal_Lahir'];
-			$Agama = $_POST['Agama'];
-			$Alamat = $_POST['Alamat'];
-			$Sekolah = $_POST['Sekolah'];
+			$Tanggal_Lahir	= $_POST['Tanggal_Lahir'];
+			$Agama 			= $_POST['Agama'];
+			$Alamat 		= $_POST['Alamat'];
+			$Sekolah		= $_POST['Sekolah'];
+			$Alamat_Sekolah	= $_POST['Alamat_Sekolah'];
+			$Tahun_Lulus	= $_POST['Tahun_Lulus'];
+			$Nama_Ayah		= $_POST['Nama_Ayah'];
+			$Nik_Ayah		= $_POST['Nik_Ayah'];
+			$Pekerjaan_Ayah	= $_POST['Pekerjaan_Ayah'];
+			$Nama_Ibu		= $_POST['Nama_Ibu'];
+			$Nik_Ibu		= $_POST['Nik_Ibu'];
+			$Pekerjaan_Ibu	= $_POST['Pekerjaan_Ibu'];
 
 			$cek = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE Nim='$Nim'") or die(mysqli_error($koneksi));
 
 			if(mysqli_num_rows($cek) == 0){
-				$sql = mysqli_query($koneksi, "INSERT INTO mahasiswa(Nim, Nama_Mhs, Jenis_Kelamin, Program_Studi, Jurusan, Tanggal_Lahir, Agama, Alamat, Sekolah) 
-				VALUES('$Nim', '$Nama_Mhs', '$Jenis_Kelamin', '$Program_Studi', '$Jurusan', '$Tanggal_Lahir', '$Agama', '$Alamat', '$Sekolah')") or die(mysqli_error($koneksi));
+				$sql = mysqli_query($koneksi, "INSERT INTO mahasiswa(Nim, Nama_Mhs, Nik_Mhs, Jenis_Kelamin, Program_Studi, Jurusan, 
+				Tanggal_Lahir, Agama, Alamat, Sekolah, Alamat_Sekolah, Tahun_Lulus, Nama_Ayah, Nik_Ayah, Pekerjaan_Ayah, Nama_Ibu, Nik_Ibu, Pekerjaan_Ibu) 
+				VALUES('$Nim', '$Nama_Mhs', '$Nik_Mhs', '$Jenis_Kelamin', '$Program_Studi', '$Jurusan', '$Tanggal_Lahir', '$Agama', 
+				'$Alamat', '$Sekolah',  '$Alamat_Sekolah', '$Tahun_Lulus', '$Nama_Ayah', '$Nik_Ayah', '$Pekerjaan_Ayah', '$Nama_Ibu', '$Nik_Ibu', '$Pekerjaan_Ibu')") 
+				or die(mysqli_error($koneksi));
 
 				if($sql){
 					echo '<script>alert("Berhasil menambahkan data."); document.location="halaman_admin.php?page=tampil_mhs";</script>';
@@ -55,6 +67,12 @@
 							<input type="radio" class="join-btn" name="Jenis_Kelamin" value="Perempuan" required>Perempuan
 						</label>
 					</div>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">NIK</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nik_Mhs" class="form-control" size="4" placeholder="Masukkan NIK" required>
 				</div>
 			</div>
 			<div class="item form-group">
@@ -103,9 +121,57 @@
 				</div>
 			</div>
 			<div class="item form-group">
-				<label class="col-form-label col-md-3 col-sm-3 label-align">Sekolah</label>
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Sekolah</label>
 				<div class="col-md-6 col-sm-6 ">
 					<input type="text" name="Sekolah" class="form-control" size="4" placeholder="Masukkan Sekolah Asal" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Alamat Sekolah</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Alamat_Sekolah" class="form-control" size="4" placeholder="Masukkan Alamat Sekolah" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Tahun Lulus</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="year" name="Tahun_Lulus" class="form-control" size="4" placeholder="yyyy" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Ayah</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nama_Ayah" class="form-control" size="4" placeholder="Masukkan Nama Ayah" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">NIK Ayah</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nik_Ayah" class="form-control" size="4" placeholder="Masukkan NIK Ayah" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Pekerjaan Ayah</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Pekerjaan_Ayah" class="form-control" size="4" placeholder="Masukkan Pekerjaan Ayah" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Ibu</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nama_Ibu" class="form-control" size="4" placeholder="Masukkan Nama Ibu" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">NIK Ibu</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nik_Ibu" class="form-control" size="4" placeholder="Masukkan NIK Ibu"required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Pekerjaan Ibu</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Pekerjaan_Ibu" class="form-control" size="4" placeholder="Masukkan Pekerjaan Ibu" required>
 				</div>
 			</div>
 			<div class="item form-group">

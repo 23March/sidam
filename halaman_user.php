@@ -70,8 +70,8 @@
                   </li>
                   <li><a href="#"><i class="fa fa-desktop"></i> Mahasiswa <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-                      <li><a href="halaman_user.php?page=tampil_mhs&Nim">Data Mahasiswa</a></li>
-                      <li><a href="halaman_user.php?page=tampil_orangtua">Data Orang Tua</a></li>
+                      <li><a href="halaman_user.php?page=tampil_mhs">Data Mahasiswa</a></li>
+                      <li><a href="halaman_user.php?page=tampil_ortu">Data Orang Tua</a></li>
                       <li><a href="halaman_user.php?page=tampil_sekolah">Data Sekolah</a></li>
                     </ul>
                   </li>
@@ -120,14 +120,26 @@
       		# code...
       		include 'mahasiswa.php';
       		break;
-      	case 'tampil_orangtua':
+      	case 'edit_mhs':
       		# code...
-      		include 'ortu.php';
+      		include 'editmhs.php';
       		break;
-        case 'tampil_sekolah':
+        case 'tampil_ortu':
+        		# code...
+        	include 'ortu.php';
+          break;
+          case 'edit_ortu':
+        		# code...
+        	include 'editortu.php';
+          break;  
+          case 'tampil_sekolah':
         		# code...
         	include 'sekolah.php';
           break;
+          case 'edit_sekolah':
+        		# code...
+        	include 'editsekolah.php';
+          break;  
         default:
 		          #code...
 		      include 'home.php';

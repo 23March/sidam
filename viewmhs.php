@@ -77,39 +77,12 @@
         <p class="card-text">
             Alamat : <?php echo $data['Alamat'];?>
         </p>
-        <p class="card-text">
-            Nama Sekolah : <?php echo $data['Sekolah'];?>
-        </p>
-        <p class="card-text">
-            Alamat Sekolah  : <?php echo $data['Alamat_Sekolah'];?>
-        </p>
-        <p class="card-text">
-            Tahun Lulus : <?php echo $data['Tahun_Lulus'];?>
-        </p>
-        <p class="card-text">
-            Nama Ayah : <?php echo $data['Nama_Ayah'];?>
-        </p>
-        <p class="card-text">
-            NIK Ayah : <?php echo $data['Nik_Ayah'];?>
-        </p>
-        <p class="card-text">
-            Pekerjaan Ayah : <?php echo $data['Pekerjaan_Ayah'];?>
-        </p>
-        <p class="card-text">
-            Nama Ibu : <?php echo $data['Nama_Ibu'];?>
-        </p>
-        <p class="card-text">
-            NIK Ibu : <?php echo $data['Nik_Ibu'];?>
-        </p>
-        <p class="card-text">
-            Pekerjaan Ibu : <?php echo $data['Pekerjaan_Ibu'];?>
-        </p>
         </center>
     </div>
   <br>
     <center>
     <div>
-    <a href="halaman_admin.php?page=tampil_mhs" class="btn btn-secondary">Kembali</a>
+    <a href="halaman_user.php?page=tampil_mhs" class="btn btn-secondary">Kembali</a>
     <br>
     <br>
     <p> Copyright © SIDAM | Sistem Informasi Akademik Mahasiswa 2021 </p>

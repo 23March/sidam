@@ -14,7 +14,6 @@
 
 			//query ke database SELECT tabel mahasiswa berdasarkan Nim
 			$select = mysqli_query($koneksi, "SELECT * FROM mahasiswa WHERE Nim='$Nim'") or die(mysqli_error($koneksi));
-
 			//jika hasil query = 0 maka muncul pesan error
 			if(mysqli_num_rows($select) == 0){
 				echo '<div class="alert alert-warning">Data tidak ada dalam database.</div>';
@@ -26,11 +25,12 @@
 			}
 		}
 		?>
-
 		<?php
 		//jika tombol simpan di tekan/klik
+		
 		if(isset($_POST['submit'])){
 			$Nama_Mhs			  = $_POST['Nama_Mhs'];
+			$Nik_Mhs			  = $_POST['Nik_Mhs'];
 			$Jenis_Kelamin	= $_POST['Jenis_Kelamin'];
 			$Program_Studi	= $_POST['Program_Studi'];
 			$Jurusan	= $_POST['Jurusan'];
@@ -38,9 +38,25 @@
 			$Agama = $_POST['Agama'];
 			$Alamat = $_POST['Alamat'];
 			$Sekolah= $_POST['Sekolah'];
-
-			$sql = mysqli_query($koneksi, "UPDATE mahasiswa SET Nama_Mhs='$Nama_Mhs', Jenis_Kelamin='$Jenis_Kelamin', Program_Studi='$Program_Studi', Jurusan='$Jurusan', Tanggal_Lahir='$Tanggal_Lahir', Agama='$Agama', Alamat='$Alamat', Sekolah='$Sekolah' WHERE Nim='$Nim'") or die(mysqli_error($koneksi));
-
+			$Alamat_Sekolah	= $_POST['Alamat_Sekolah'];
+			$Tahun_Lulus	= $_POST['Tahun_Lulus'];
+			$Nama_Ayah			  = $_POST['Nama_Ayah'];
+			$Nik_Ayah	= $_POST['Nik_Ayah'];
+			$Pekerjaan_Ayah	= $_POST['Pekerjaan_Ayah'];
+			$Nama_Ibu			  = $_POST['Nama_Ibu'];
+			$Nik_Ibu	= $_POST['Nik_Ibu'];
+			$Pekerjaan_Ibu	= $_POST['Pekerjaan_Ibu'];
+					
+			
+			$sql = mysqli_query($koneksi, "UPDATE mahasiswa SET Nama_Mhs='$Nama_Mhs', Nik_Mhs='$Nik_Mhs', 
+			Jenis_Kelamin='$Jenis_Kelamin', Program_Studi='$Program_Studi', Jurusan='$Jurusan', 
+			Tanggal_Lahir='$Tanggal_Lahir', Agama='$Agama', Alamat='$Alamat', Sekolah='$Sekolah', 
+			Alamat_Sekolah='$Alamat_Sekolah', Tahun_Lulus='$Tahun_Lulus', Nama_Ayah='$Nama_Ayah', 
+			Nik_Ayah='$Nik_Ayah', Pekerjaan_Ayah='$Pekerjaan_Ayah', Nama_Ibu='$Nama_Ibu', Nik_Ibu='$Nik_Ibu', 
+			Pekerjaan_Ibu='$Pekerjaan_Ibu' WHERE Nim='$Nim'") or die(mysqli_error($koneksi));
+if($sql==1){
+	$query = mysqli_query($koneksi,"UPDATE mahasiswa SET terakhir_diubah = now() WHERE Nim = '$Nim'");
+}
 			if($sql){
 				echo '<script>alert("Berhasil menyimpan data."); document.location="halaman_admin.php?page=tampil_mhs";</script>';
 			}else{
@@ -51,7 +67,7 @@
 
 		<form action="halaman_admin.php?page=edit_mhs&Nim=<?php echo $Nim; ?>" method="post">
 			<div class="item form-group">
-				<label class="col-form-label col-md-3 col-sm-3 label-align">Nim</label>
+				<label class="col-form-label col-md-3 col-sm-3 label-align">NIM</label>
 				<div class="col-md-6 col-sm-6">
 					<input type="text" name="Nim" class="form-control" size="4" value="<?php echo $data['Nim']; ?>" readonly required>
 				</div>
@@ -60,6 +76,12 @@
 				<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Mahasiswa</label>
 				<div class="col-md-6 col-sm-6">
 					<input type="text" name="Nama_Mhs" class="form-control" value="<?php echo $data['Nama_Mhs']; ?>" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">NIK</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nik_Mhs" class="form-control" size="4" value="<?php echo $data['Nik_Mhs']; ?>" required>
 				</div>
 			</div>
 			<div class="item form-group">
@@ -124,9 +146,57 @@
 				</div>
 			</div>
 			<div class="item form-group">
-				<label class="col-form-label col-md-3 col-sm-3 label-align">Sekolah</label>
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Sekolah</label>
 				<div class="col-md-6 col-sm-6">
 					<input type="text" name="Sekolah" class="form-control" size="4" value="<?php echo $data['Sekolah']; ?>" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Alamat Sekolah</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Alamat_Sekolah" class="form-control" value="<?php echo $data['Alamat_Sekolah']; ?>" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Tahun Lulus</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="year" name="Tahun_Lulus" class="form-control" value="<?php echo $data['Tahun_Lulus']; ?>" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Ayah</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nama_Ayah" class="form-control" size="4" value="<?php echo $data['Nama_Ayah']; ?>" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">NIK Ayah</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nik_Ayah" class="form-control" value="<?php echo $data['Nik_Ayah']; ?>" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Pekerjaan Ayah</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Pekerjaan_Ayah" class="form-control" value="<?php echo $data['Pekerjaan_Ayah']; ?>" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Nama Ibu</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nama_Ibu" class="form-control" size="4" value="<?php echo $data['Nama_Ibu']; ?>" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">NIK Ibu</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Nik_Ibu" class="form-control" value="<?php echo $data['Nik_Ibu']; ?>" required>
+				</div>
+			</div>
+			<div class="item form-group">
+				<label class="col-form-label col-md-3 col-sm-3 label-align">Pekerjaan Ibu</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" name="Pekerjaan_Ibu" class="form-control" value="<?php echo $data['Pekerjaan_Ibu']; ?>" required>
 				</div>
 			</div>
 			<div class="item form-group">

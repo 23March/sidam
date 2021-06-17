@@ -16,6 +16,9 @@ $login = mysqli_query($koneksi,"select * from user where username='$username' an
 $cek = mysqli_num_rows($login);
 
 // cek apakah username dan password di temukan pada database
+if($cek==1){
+	$query = mysqli_query($koneksi,"UPDATE user SET current_login = now() WHERE username = '$username'");
+	session_start();
 if($cek > 0){
 
 	$data = mysqli_fetch_assoc($login);
@@ -35,7 +38,7 @@ if($cek > 0){
 		$_SESSION['username'] = $username;
 		$_SESSION['level'] = "user";
 		// alihkan ke halaman dashboard pegawai
-		header("location:halaman_user.php?Nim=$username");
+		header("location:halaman_user.php");
 	}	
 else{
 
@@ -48,6 +51,6 @@ else{
 	header("location:index.php?pesan=gagal");
 }
 
-
+}
 
 ?>
