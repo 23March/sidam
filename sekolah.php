@@ -17,6 +17,7 @@ include('config.php');
 					<th>Nama Sekolah</th>
 					<th>Alamat Sekolah</th>
 					<th>Tahun Lulus</th>
+					<th>Terakhir Diubah</th>
 					<th>Aksi</th>
 				</tr>
 			</thead>
@@ -41,7 +42,9 @@ include('config.php');
 							<td>'.$data['Tahun_Lulus'].'</td>
 							<td>'.$data['terakhir_diubah'].'</td>
 							<td>
+								<a href="viewsekolah.php?page=view_sekolah&Nim='.$data['Nim'].'" class="btn btn-primary btn-sm">View</a>
 								<a href="halaman_user.php?page=edit_sekolah&Nim='.$data['Nim'].'" class="btn btn-warning btn-sm">Edit</a>
+								<a href="deletesekolah.php?Nim='.$data['Nim'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Anda yakin ingin menghapus data ini?\')">Delete</a>
 							</td>
 						</tr>
 						';
