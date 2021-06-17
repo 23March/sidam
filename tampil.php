@@ -10,7 +10,7 @@ include('config.php');
 		<a href="halaman_admin.php?page=tambah_mhs"><button class="btn btn-success">Tambah Data</button></a>
 </table>
 		<div class="table-responsive">
-		<table class="table table-striped jambo_table bulk_action" style= "width:100%;overflow-x:auto">
+		<table class="table table-striped jambo_table bulk_action" style= "height: 5em;overflow-x:auto">
 			<thead>
 			<center>	
 				<tr>
