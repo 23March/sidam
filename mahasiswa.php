@@ -50,10 +50,8 @@ include('config.php');
 							<td>'.$data['Alamat'].'</td>
 							<td>'.$data['terakhir_diubah'].'</td>
 							<td>
-								<a href="viewmhs.php?page=view_mhs&Nim='.$data['Nim'].'" class="btn btn-primary btn-sm">View</a>
 								<a href="halaman_user.php?page=edit_mhs&Nim='.$data['Nim'].'" class="btn btn-warning btn-sm">Edit</a>
-								<a href="deletemhs.php?Nim='.$data['Nim'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Anda yakin ingin menghapus data ini?\')">Delete</a>
-							</td>
+								</td>
 						</tr>
 						';
 						$no++;

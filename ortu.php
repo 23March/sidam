@@ -48,10 +48,8 @@ include('config.php');
 							<td>'.$data['Pekerjaan_Ibu'].'</td>
 							<td>'.$data['terakhir_diubah'].'</td>
 							<td>
-								<a href="viewortu.php?page=view_ortu&Nim='.$data['Nim'].'" class="btn btn-primary btn-sm">View</a>
 								<a href="halaman_user.php?page=edit_ortu&Nim='.$data['Nim'].'" class="btn btn-warning btn-sm">Edit</a>
-								<a href="deleteortu.php?Nim='.$data['Nim'].'" class="btn btn-danger btn-sm" onclick="return confirm(\'Anda yakin ingin menghapus data ini?\')">Delete</a>
-							</td>
+								</td>
 						</tr>
 						';
 						$no++;
