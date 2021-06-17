@@ -177,12 +177,7 @@
 			<div class="item form-group">
 				<div  class="col-md-6 col-sm-6 offset-md-3">
 					<input type="submit" name="submit" class="btn btn-primary" value="Simpan">
-					<button onclick="goBack()">Back</button>
-					<script>
-						function Back() {
-  							window.history.back();
-								}
-					</script>
-			</div>
+					<button onclick="halaman_admin.php">Back</button>
+				</div>
 		</form>
 	</div>
