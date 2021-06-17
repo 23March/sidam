@@ -8,7 +8,7 @@ include('config.php');
 		<center><font size="6">Data Mahasiswa</font></center>
 		<hr>
 		<a href="halaman_admin.php?page=tambah_mhs"><button class="btn btn-success">Tambah Data</button></a>
-</table>
+		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search data">
 		<div class="table-responsive">
 		<table class="table table-striped jambo_table bulk_action" style= "height: 5em;overflow-x:auto">
 			<thead>
@@ -91,5 +91,5 @@ include('config.php');
 				?>
 			<tbody>
 		</table>
-	</div>
+		</div>
 	</div>
